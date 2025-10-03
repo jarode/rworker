@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: spa-webhook
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: BITRIX_DOMAIN
+        value: ralengroup.bitrix24.pl
+      - key: BITRIX_USER_ID
+        value: 25031
+      - key: BITRIX_WEBHOOK_KEY
+        value: 6cg9uncuyvbxtiq3
+      - key: LOG_LEVEL
+        value: INFO
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_PORT
+        value: 10000
