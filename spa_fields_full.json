@@ -1,0 +1,1164 @@
+{
+  "fields": {
+    "id": {
+      "type": "integer",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "ID",
+      "upperName": "ID"
+    },
+    "title": {
+      "type": "string",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Nazwa",
+      "upperName": "TITLE"
+    },
+    "xmlId": {
+      "type": "string",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Zewnętrzny ID",
+      "upperName": "XML_ID"
+    },
+    "createdTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Utworzono",
+      "upperName": "CREATED_TIME"
+    },
+    "updatedTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Zaktualizowano",
+      "upperName": "UPDATED_TIME"
+    },
+    "createdBy": {
+      "type": "user",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Utworzone przez",
+      "upperName": "CREATED_BY"
+    },
+    "updatedBy": {
+      "type": "user",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Zaktualizowane przez",
+      "upperName": "UPDATED_BY"
+    },
+    "assignedById": {
+      "type": "user",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Osoba odpowiedzialna",
+      "upperName": "ASSIGNED_BY_ID"
+    },
+    "opened": {
+      "type": "boolean",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Dostępne dla wszystkich",
+      "upperName": "OPENED"
+    },
+    "webformId": {
+      "type": "integer",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Utworzone przez formularz CRM",
+      "upperName": "WEBFORM_ID"
+    },
+    "lastCommunicationTime": {
+      "type": "string",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Ostatni kontakt",
+      "upperName": "LAST_COMMUNICATION_TIME"
+    },
+    "begindate": {
+      "type": "date",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Rozpoczęto",
+      "upperName": "BEGINDATE"
+    },
+    "closedate": {
+      "type": "date",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Zakończono",
+      "upperName": "CLOSEDATE"
+    },
+    "companyId": {
+      "type": "crm_company",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Firma",
+      "settings": {
+        "parentEntityTypeId": 4
+      },
+      "upperName": "COMPANY_ID"
+    },
+    "contactId": {
+      "type": "crm_contact",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "isDeprecated": true,
+      "title": "Kontakt",
+      "upperName": "CONTACT_ID"
+    },
+    "contactIds": {
+      "type": "crm_contact",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": true,
+      "isDynamic": false,
+      "title": "CONTACT_IDS",
+      "upperName": "CONTACT_IDS"
+    },
+    "contacts": {
+      "type": "crm_contact",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": true,
+      "isDynamic": false,
+      "title": "CONTACTS",
+      "upperName": "CONTACTS"
+    },
+    "observers": {
+      "type": "user",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": true,
+      "isDynamic": false,
+      "title": "Obserwatorzy",
+      "upperName": "OBSERVERS"
+    },
+    "categoryId": {
+      "type": "crm_category",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Lejek",
+      "upperName": "CATEGORY_ID"
+    },
+    "movedTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Data zmiany etapu",
+      "upperName": "MOVED_TIME"
+    },
+    "movedBy": {
+      "type": "user",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Autor zmiany etapu",
+      "upperName": "MOVED_BY"
+    },
+    "stageId": {
+      "type": "crm_status",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "statusType": "DYNAMIC_1032_STAGE_17",
+      "title": "Etap",
+      "upperName": "STAGE_ID"
+    },
+    "previousStageId": {
+      "type": "crm_status",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "statusType": "DYNAMIC_1032_STAGE_17",
+      "title": "Poprzedni etap",
+      "upperName": "PREVIOUS_STAGE_ID"
+    },
+    "sourceId": {
+      "type": "crm_status",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "statusType": "SOURCE",
+      "title": "Źródło",
+      "upperName": "SOURCE_ID"
+    },
+    "sourceDescription": {
+      "type": "text",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Informacje o źródle",
+      "upperName": "SOURCE_DESCRIPTION"
+    },
+    "mycompanyId": {
+      "type": "crm_company",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Dane Twojej firmy",
+      "settings": {
+        "isMyCompany": true,
+        "parentEntityTypeId": 4,
+        "isEmbeddedEditorEnabled": true
+      },
+      "upperName": "MYCOMPANY_ID"
+    },
+    "lastActivityBy": {
+      "type": "user",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Last timeline activity added by",
+      "upperName": "LAST_ACTIVITY_BY"
+    },
+    "lastActivityTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Ostatnia aktualizacja",
+      "upperName": "LAST_ACTIVITY_TIME"
+    },
+    "parentId2": {
+      "type": "crm_entity",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Deal",
+      "settings": {
+        "parentEntityTypeId": 2
+      },
+      "upperName": "PARENT_ID_2"
+    },
+    "lastCommunicationCallTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Ostatnie połączenie",
+      "upperName": "LAST_COMMUNICATION_CALL_TIME"
+    },
+    "lastCommunicationEmailTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Ostatnia wiadomość e-mail",
+      "upperName": "LAST_COMMUNICATION_EMAIL_TIME"
+    },
+    "lastCommunicationImolTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Ostatnia konwersacja na Otwartym kanale",
+      "upperName": "LAST_COMMUNICATION_IMOL_TIME"
+    },
+    "lastCommunicationWebformTime": {
+      "type": "datetime",
+      "isRequired": false,
+      "isReadOnly": true,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": false,
+      "title": "Ostatni przesłany formularz CRM",
+      "upperName": "LAST_COMMUNICATION_WEBFORM_TIME"
+    },
+    "ufCrm9_1740930205": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne wszystkie",
+      "listLabel": "",
+      "formLabel": "Wolne wszystkie",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930205"
+    },
+    "ufCrm9_1740930322": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne M nasze",
+      "listLabel": "",
+      "formLabel": "Wolne M nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930322"
+    },
+    "ufCrm9_1740930346": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne K nasze",
+      "listLabel": "",
+      "formLabel": "Wolne K nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930346"
+    },
+    "ufCrm9_1740930371": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne PARY nasze",
+      "listLabel": "",
+      "formLabel": "Wolne PARY nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930371"
+    },
+    "ufCrm9_1740930392": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne M własne",
+      "listLabel": "",
+      "formLabel": "Wolne M własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930392"
+    },
+    "ufCrm9_1740930427": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne K własne",
+      "listLabel": "",
+      "formLabel": "Wolne K własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930427"
+    },
+    "ufCrm9_1740930439": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wolne PARY własne",
+      "listLabel": "",
+      "formLabel": "Wolne PARY własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930439"
+    },
+    "ufCrm9_1740930456": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Liczba miejsc",
+      "listLabel": "",
+      "formLabel": "Liczba miejsc",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930456"
+    },
+    "ufCrm9_1740930468": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Mężczyźni",
+      "listLabel": "",
+      "formLabel": "Mężczyźni",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930468"
+    },
+    "ufCrm9_1740930480": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Kobiety",
+      "listLabel": "",
+      "formLabel": "Kobiety",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930480"
+    },
+    "ufCrm9_1740930495": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Pary",
+      "listLabel": "",
+      "formLabel": "Pary",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930495"
+    },
+    "ufCrm9_1740930520": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Wiek",
+      "listLabel": "",
+      "formLabel": "Wiek",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1740930520"
+    },
+    "ufCrm9_1740930537": {
+      "type": "date",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Data szkolenia",
+      "listLabel": "",
+      "formLabel": "Data szkolenia",
+      "filterLabel": "",
+      "settings": {
+        "DEFAULT_VALUE": {
+          "TYPE": "NONE",
+          "VALUE": ""
+        }
+      },
+      "upperName": "UF_CRM_9_1740930537"
+    },
+    "ufCrm9_1740930561": {
+      "type": "enumeration",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "items": [
+        {
+          "ID": "2011",
+          "VALUE": "1 Wiek"
+        },
+        {
+          "ID": "1875",
+          "VALUE": "1 Data przyjazdu"
+        },
+        {
+          "ID": "1873",
+          "VALUE": "1 Mieszkanie nasze"
+        },
+        {
+          "ID": "1871",
+          "VALUE": "1 Mieszkanie własne"
+        },
+        {
+          "ID": "1877",
+          "VALUE": "1 Polecenie"
+        },
+        {
+          "ID": "2013",
+          "VALUE": "1 Powrót"
+        },
+        {
+          "ID": "2015",
+          "VALUE": "1 Doświadczenie"
+        },
+        {
+          "ID": "1867",
+          "VALUE": "1 Sanepid"
+        },
+        {
+          "ID": "2017",
+          "VALUE": "1 Płeć K"
+        },
+        {
+          "ID": "2019",
+          "VALUE": "1 Płeć M"
+        },
+        {
+          "ID": "2021",
+          "VALUE": "1 Koordynator"
+        },
+        {
+          "ID": "1869",
+          "VALUE": "1 Data dodania deala"
+        }
+      ],
+      "title": "Pierwszeństwo 1",
+      "listLabel": "",
+      "formLabel": "Pierwszeństwo 1",
+      "filterLabel": "",
+      "settings": {
+        "DISPLAY": "LIST",
+        "LIST_HEIGHT": 1,
+        "CAPTION_NO_VALUE": "",
+        "SHOW_NO_VALUE": "Y"
+      },
+      "upperName": "UF_CRM_9_1740930561"
+    },
+    "ufCrm9_1740930829": {
+      "type": "enumeration",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "items": [
+        {
+          "ID": "1879",
+          "VALUE": "2 Wiek"
+        },
+        {
+          "ID": "1881",
+          "VALUE": "2 Data przyjazdu"
+        },
+        {
+          "ID": "1885",
+          "VALUE": "2 Mieszkanie nasze"
+        },
+        {
+          "ID": "1883",
+          "VALUE": "2 Mieszkanie własne"
+        },
+        {
+          "ID": "1889",
+          "VALUE": "2 Polecenie"
+        },
+        {
+          "ID": "1887",
+          "VALUE": "2 Powrót"
+        },
+        {
+          "ID": "2023",
+          "VALUE": "2 Doświadczenie"
+        },
+        {
+          "ID": "2025",
+          "VALUE": "2 Sanepid"
+        },
+        {
+          "ID": "2027",
+          "VALUE": "2 Płeć K"
+        },
+        {
+          "ID": "2029",
+          "VALUE": "2 Płeć M"
+        },
+        {
+          "ID": "2031",
+          "VALUE": "2 Koordynator"
+        },
+        {
+          "ID": "2033",
+          "VALUE": "2 Data dodania deala"
+        }
+      ],
+      "title": "Pierszeństwo 2",
+      "listLabel": "",
+      "formLabel": "Pierszeństwo 2",
+      "filterLabel": "",
+      "settings": {
+        "DISPLAY": "LIST",
+        "LIST_HEIGHT": 1,
+        "CAPTION_NO_VALUE": "",
+        "SHOW_NO_VALUE": "Y"
+      },
+      "upperName": "UF_CRM_9_1740930829"
+    },
+    "ufCrm9_1740930917": {
+      "type": "enumeration",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "items": [
+        {
+          "ID": "1891",
+          "VALUE": "3 WIek"
+        },
+        {
+          "ID": "1899",
+          "VALUE": "3 Data przyjazdu"
+        },
+        {
+          "ID": "1897",
+          "VALUE": "3 Mieszkanie nasze"
+        },
+        {
+          "ID": "1895",
+          "VALUE": "3 Mieszkanie własne"
+        },
+        {
+          "ID": "1901",
+          "VALUE": "3 Polecenie"
+        },
+        {
+          "ID": "1893",
+          "VALUE": "3 Powrót"
+        },
+        {
+          "ID": "2035",
+          "VALUE": "3 Doświadczenie"
+        },
+        {
+          "ID": "2037",
+          "VALUE": "3 Sanepid"
+        },
+        {
+          "ID": "2039",
+          "VALUE": "3 Płeć K"
+        },
+        {
+          "ID": "2041",
+          "VALUE": "3 Płeć M"
+        },
+        {
+          "ID": "2043",
+          "VALUE": "3 Koordynator"
+        },
+        {
+          "ID": "2045",
+          "VALUE": "3 Data dodania deala"
+        }
+      ],
+      "title": "Pierwszeństwo 3",
+      "listLabel": "",
+      "formLabel": "Pierwszeństwo 3",
+      "filterLabel": "",
+      "settings": {
+        "DISPLAY": "LIST",
+        "LIST_HEIGHT": 1,
+        "CAPTION_NO_VALUE": "",
+        "SHOW_NO_VALUE": "Y"
+      },
+      "upperName": "UF_CRM_9_1740930917"
+    },
+    "ufCrm9_1740931899": {
+      "type": "date",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Przyjazd od",
+      "listLabel": "",
+      "formLabel": "Przyjazd od",
+      "filterLabel": "",
+      "settings": {
+        "DEFAULT_VALUE": {
+          "TYPE": "NONE",
+          "VALUE": ""
+        }
+      },
+      "upperName": "UF_CRM_9_1740931899"
+    },
+    "ufCrm9_1740931913": {
+      "type": "date",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Przyjazd do",
+      "listLabel": "",
+      "formLabel": "Przyjazd do",
+      "filterLabel": "",
+      "settings": {
+        "DEFAULT_VALUE": {
+          "TYPE": "NONE",
+          "VALUE": ""
+        }
+      },
+      "upperName": "UF_CRM_9_1740931913"
+    },
+    "ufCrm9_1741787499": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "M nasze",
+      "listLabel": "",
+      "formLabel": "M nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787499"
+    },
+    "ufCrm9_1741787519": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "M własne",
+      "listLabel": "",
+      "formLabel": "M własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787519"
+    },
+    "ufCrm9_1741787536": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "K nasze",
+      "listLabel": "",
+      "formLabel": "K nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787536"
+    },
+    "ufCrm9_1741787546": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "K własne",
+      "listLabel": "",
+      "formLabel": "K własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787546"
+    },
+    "ufCrm9_1741787687": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "PARY nasze",
+      "listLabel": "",
+      "formLabel": "PARY nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787687"
+    },
+    "ufCrm9_1741787698": {
+      "type": "double",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "PARY własne",
+      "listLabel": "",
+      "formLabel": "PARY własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787698"
+    },
+    "ufCrm9_1741787736": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe M nasze",
+      "listLabel": "",
+      "formLabel": "Gotowe M nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787736"
+    },
+    "ufCrm9_1741787758": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe M własne",
+      "listLabel": "",
+      "formLabel": "Gotowe M własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787758"
+    },
+    "ufCrm9_1741787783": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe K własne",
+      "listLabel": "",
+      "formLabel": "Gotowe K własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787783"
+    },
+    "ufCrm9_1741787797": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe K nasze",
+      "listLabel": "",
+      "formLabel": "Gotowe K nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787797"
+    },
+    "ufCrm9_1741787809": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe PARY własne",
+      "listLabel": "",
+      "formLabel": "Gotowe PARY własne",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787809"
+    },
+    "ufCrm9_1741787822": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe PARY nasze",
+      "listLabel": "",
+      "formLabel": "Gotowe PARY nasze",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741787822"
+    },
+    "ufCrm9_1741795591": {
+      "type": "double",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Gotowe wszystkie",
+      "listLabel": "",
+      "formLabel": "Gotowe wszystkie",
+      "filterLabel": "",
+      "settings": {
+        "PRECISION": 0,
+        "SIZE": 20,
+        "MIN_VALUE": 0,
+        "MAX_VALUE": 0,
+        "DEFAULT_VALUE": null
+      },
+      "upperName": "UF_CRM_9_1741795591"
+    },
+    "ufCrm9_1747740109": {
+      "type": "enumeration",
+      "isRequired": true,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "items": [
+        {
+          "ID": "1991",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "1993",
+          "VALUE": "Nie"
+        }
+      ],
+      "title": "Czy zamówienie jest bezpłciowe?",
+      "listLabel": "",
+      "formLabel": "Czy zamówienie jest bezpłciowe?",
+      "filterLabel": "",
+      "settings": {
+        "DISPLAY": "LIST",
+        "LIST_HEIGHT": 2,
+        "CAPTION_NO_VALUE": "",
+        "SHOW_NO_VALUE": "Y"
+      },
+      "upperName": "UF_CRM_9_1747740109"
+    },
+    "ufCrm9_1752664331": {
+      "type": "boolean",
+      "isRequired": false,
+      "isReadOnly": false,
+      "isImmutable": false,
+      "isMultiple": false,
+      "isDynamic": true,
+      "title": "Pilne",
+      "listLabel": "",
+      "formLabel": "Pilne",
+      "filterLabel": "",
+      "settings": {
+        "DEFAULT_VALUE": 0,
+        "DISPLAY": "CHECKBOX",
+        "LABEL": [
+          "",
+          ""
+        ],
+        "LABEL_CHECKBOX": ""
+      },
+      "upperName": "UF_CRM_9_1752664331"
+    }
+  }
+}

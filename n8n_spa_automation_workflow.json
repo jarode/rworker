@@ -1,0 +1,443 @@
+{
+  "name": "SPA Automation - Python Webhook",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 5
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule SPA Processing",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://ralengroup.bitrix24.pl/rest/25031/6cg9uncuyvbxtiq3/crm.item.list",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "entityTypeId",
+              "value": "1032"
+            },
+            {
+              "name": "filter",
+              "value": "={\"STAGE_ID\": \"DT1032_17:UC_CU0OTZ\"}"
+            },
+            {
+              "name": "select",
+              "value": "=[\"ID\", \"TITLE\", \"ufCrm9_1740930205\", \"ufCrm9_1747740109\"]"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000,
+          "retry": {
+            "enabled": true,
+            "maxAttempts": 3
+          }
+        }
+      },
+      "id": "get-spa-list",
+      "name": "Get Active SPA List",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "free-slots-condition",
+              "leftValue": "={{ $json.ufCrm9_1740930205 }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-spa",
+      "name": "Filter SPA with Free Slots",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {
+          "reset": false
+        }
+      },
+      "id": "split-spa",
+      "name": "Split SPA for Processing",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "id": "wait-between",
+      "name": "Wait 1 Minute Between SPA",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:5000/webhook/spa/{{ $json.id }}",
+        "options": {
+          "timeout": 30000,
+          "retry": {
+            "enabled": true,
+            "maxAttempts": 3
+          }
+        }
+      },
+      "id": "process-spa-webhook",
+      "name": "Process SPA Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1340,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "spa_id",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "name": "spa_title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            },
+            {
+              "name": "webhook_status",
+              "value": "={{ $('Process SPA Webhook').item.json.status }}"
+            },
+            {
+              "name": "deals_promoted",
+              "value": "={{ $('Process SPA Webhook').item.json.stats.promoted }}"
+            },
+            {
+              "name": "updates_executed",
+              "value": "={{ $('Process SPA Webhook').item.json.stats.updates_executed }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "log-results",
+      "name": "Log Processing Results",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1560,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "success-condition",
+              "leftValue": "={{ $json.webhook_status }}",
+              "rightValue": "success",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-success",
+      "name": "Check Webhook Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message",
+              "value": "=SPA {{ $json.spa_id }} ({{ $json.spa_title }}) processed successfully. Promoted {{ $json.deals_promoted }} deals, executed {{ $json.updates_executed }} updates."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-message",
+      "name": "Success Message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2000,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message",
+              "value": "=SPA {{ $json.spa_id }} ({{ $json.spa_title }}) processing failed. Status: {{ $json.webhook_status }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "error-message",
+      "name": "Error Message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2000,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "continue": true
+      },
+      "id": "continue-on-error",
+      "name": "Continue on Error",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "seconds"
+      },
+      "id": "final-wait",
+      "name": "Final Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2220,
+        200
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule SPA Processing": {
+      "main": [
+        [
+          {
+            "node": "Get Active SPA List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Active SPA List": {
+      "main": [
+        [
+          {
+            "node": "Filter SPA with Free Slots",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter SPA with Free Slots": {
+      "main": [
+        [
+          {
+            "node": "Split SPA for Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split SPA for Processing": {
+      "main": [
+        [
+          {
+            "node": "Wait 1 Minute Between SPA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 1 Minute Between SPA": {
+      "main": [
+        [
+          {
+            "node": "Process SPA Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process SPA Webhook": {
+      "main": [
+        [
+          {
+            "node": "Log Processing Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Processing Results": {
+      "main": [
+        [
+          {
+            "node": "Check Webhook Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Webhook Success": {
+      "main": [
+        [
+          {
+            "node": "Success Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success Message": {
+      "main": [
+        [
+          {
+            "node": "Final Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Message": {
+      "main": [
+        [
+          {
+            "node": "Continue on Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Continue on Error": {
+      "main": [
+        [
+          {
+            "node": "Final Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "spa-automation-python",
+  "tags": [
+    {
+      "createdAt": "2025-10-02T22:30:00.000Z",
+      "updatedAt": "2025-10-02T22:30:00.000Z",
+      "id": "spa-automation",
+      "name": "SPA Automation"
+    }
+  ]
+}

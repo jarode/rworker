@@ -1,0 +1,78 @@
+========================================================================================================================
+📦 KOMPLETNE MAPOWANIE PÓL - SPA I DEAL
+========================================================================================================================
+
+========================================================================================================================
+📋 POLA DEAL (Rekrutacja NEW, categoryId=25)
+========================================================================================================================
+
+KOD TECHNICZNY                      NAZWA UI                                           TYP             PRZYKŁAD                      
+----------------------------------------------------------------------------------------------------------------------------------
+UF_CRM_1669643033481                Wiek                                               double          NULL                          
+UF_CRM_1740931105                   Płeć                                               enumeration     NULL                          
+  └─ Wartości: 1907=K, 1909=M, 1911=PARA
+UF_CRM_1740931132                   Sanepid                                            enumeration     NULL                          
+  └─ Wartości: 1913=Tak, 1915=Nie
+UF_CRM_1740931164                   Mieszkanie                                         enumeration     NULL                          
+  └─ Wartości: 1917=Własne, 1919=Nasze
+UF_CRM_1740931210                   Pośrednik                                          enumeration     NULL                          
+  └─ Wartości: 1921=Tak, 1923=Nie
+UF_CRM_1740931256                   Data przyjazdu                                     date            NULL                          
+UF_CRM_1740931312                   Polecenie pracy                                    enumeration     NULL                          
+  └─ Wartości: 1925=Tak, 1927=Nie
+UF_CRM_1740931330                   ID Zamówienie SPA                                  string          NULL                          
+UF_CRM_1741856527                   Czas dodania - sortowanie                          datetime        NULL                          
+UF_CRM_1741867083                   Zdjęcie / skan dokumentów 1 (paszport - 1 strona)  file            NULL                          
+UF_CRM_1741867102                   Zdjęcie / skan dokumentów 2 (paszport - wszystkie strony  + PESEL) file            NULL                          
+UF_CRM_1741867290                   Zatwierdzenie dokumentów                           enumeration     NULL                          
+  └─ Wartości: 1945=Zatwierdzone, 1947=Odrzucone, 1949=Do poprawy
+UF_CRM_1741871940                   Komentarz do dokumentów                            string          NULL                          
+UF_CRM_1741872862                   Zaplanowany przyjazd                               boolean         NULL                          
+UF_CRM_1743329864                   Priorytet SPA                                      enumeration     NULL                          
+  └─ Wartości: 1951=Priorytet 1, 1953=Priorytet 2, 1955=Priorytet 3, 1957=Priorytet 4
+UF_CRM_1748981014                   Komplet dokumentów                                 enumeration     NULL                          
+  └─ Wartości: 1995=Tak
+UF_CRM_1748981211                   Wiek-data                                          date            NULL                          
+UF_CRM_1748981275                   Powrót                                             enumeration     NULL                          
+  └─ Wartości: 1999=Tak, 2001=Nie
+UF_CRM_1748981302                   Doświadczenie                                      enumeration     NULL                          
+  └─ Wartości: 2003=Tak, 2005=Nie
+UF_CRM_1748981451                   Koordynator                                        enumeration     NULL                          
+  └─ Wartości: 2007=Tak, 2009=Nie
+
+========================================================================================================================
+📋 POLA SPA (Smart Process, entityTypeId=1032)
+========================================================================================================================
+
+KOD TECHNICZNY                      WARTOŚĆ                                            TYP DANYCH          
+--------------------------------------------------------------------------------------------------------------
+ufCrm9_1740930205                   -134                                               🔢 number            
+ufCrm9_1740930322                   1                                                  🔢 number            
+ufCrm9_1740930346                   0                                                  🔢 number            
+ufCrm9_1740930371                   -1                                                 🔢 number            
+ufCrm9_1740930392                   -1                                                 🔢 number            
+ufCrm9_1740930427                   -2                                                 🔢 number            
+ufCrm9_1740930439                   0                                                  🔢 number            
+ufCrm9_1740930456                   3                                                  🔢 number            
+ufCrm9_1740930468                   2                                                  🔢 number            
+ufCrm9_1740930480                   1                                                  🔢 number            
+ufCrm9_1740930495                   0                                                  🔢 number            
+ufCrm9_1740930520                   55                                                 🔢 number            
+ufCrm9_1740930537                   2026-01-30T03:00:00+03:00                          📅 datetime          
+ufCrm9_1740930561                   1875                                               🔢 number            
+ufCrm9_1740930829                   1879                                               🔢 number            
+ufCrm9_1740930917                   1897                                               🔢 number            
+ufCrm9_1740931899                   2026-04-30T03:00:00+03:00                          📅 datetime          
+ufCrm9_1741787499                   1                                                  🔢 number            
+ufCrm9_1741787519                   1                                                  🔢 number            
+ufCrm9_1741787536                   0                                                  🔢 number            
+ufCrm9_1741787546                   1                                                  🔢 number            
+ufCrm9_1741787687                   0                                                  🔢 number            
+ufCrm9_1741787698                   0                                                  🔢 number            
+ufCrm9_1741787758                   36                                                 🔢 number            
+ufCrm9_1741787783                   51                                                 🔢 number            
+ufCrm9_1741787797                   36                                                 🔢 number            
+ufCrm9_1741787822                   1                                                  🔢 number            
+ufCrm9_1741795591                   137                                                🔢 number            
+ufCrm9_1747740109                   1993                                               🏷️  enum_id         
+ufCrm9_1752664331                   N                                                  str                 

@@ -1,0 +1,46 @@
+# Railway ignore file
+# Ignore files that shouldn't be deployed
+
+# Development files
+.env
+.env.local
+.env.development
+.env.test
+
+# Documentation
+*.md
+docs/
+DEPLOYMENT_OPTIONS.md
+N8N_WORKFLOW_DESIGN.md
+FIELDS_MAPPING_COMPLETE.md
+
+# Git
+.git/
+.gitignore
+
+# Docker development
+docker-compose.yml
+docker-compose.dev.yml
+Makefile
+
+# Tests
+tests/
+pytest.ini
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Backup
+backup/

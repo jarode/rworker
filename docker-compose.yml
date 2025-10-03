@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Dev container - dla development i testów
+  spa-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spa_automation_dev
+    volumes:
+      - .:/app  # Mount całego projektu
+      - /app/__pycache__  # Exclude cache
+    environment:
+      - PYTHONUNBUFFERED=1
+      - BITRIX_DOMAIN=${BITRIX_DOMAIN:-ralengroup.bitrix24.pl}
+      - BITRIX_USER_ID=${BITRIX_USER_ID:-25031}
+      - BITRIX_WEBHOOK_KEY=${BITRIX_WEBHOOK_KEY:-6cg9uncuyvbxtiq3}
+    env_file:
+      - .env
+    command: tail -f /dev/null  # Keep container running
+    
+  # Webhook service - dla produkcji
+  spa-webhook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spa_automation_webhook
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - FLASK_ENV=${FLASK_ENV:-production}
+      - BITRIX_DOMAIN=${BITRIX_DOMAIN:-ralengroup.bitrix24.pl}
+      - BITRIX_USER_ID=${BITRIX_USER_ID:-25031}
+      - BITRIX_WEBHOOK_KEY=${BITRIX_WEBHOOK_KEY:-6cg9uncuyvbxtiq3}
+    env_file:
+      - .env
+    command: python src/webhook.py
+    restart: unless-stopped
+    
+  # Test runner - tylko testy
+  spa-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spa_automation_test
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - BITRIX_DOMAIN=${BITRIX_DOMAIN:-ralengroup.bitrix24.pl}
+      - BITRIX_USER_ID=${BITRIX_USER_ID:-25031}
+      - BITRIX_WEBHOOK_KEY=${BITRIX_WEBHOOK_KEY:-6cg9uncuyvbxtiq3}
+    env_file:
+      - .env
+    command: pytest tests/ -v --cov=src --cov-report=html
+
+

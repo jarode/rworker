@@ -1,0 +1,32 @@
+services:
+  # Produkcyjny webhook service
+  spa-webhook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spa_automation_webhook_prod
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+      - BITRIX_DOMAIN=${BITRIX_DOMAIN}
+      - BITRIX_USER_ID=${BITRIX_USER_ID}
+      - BITRIX_WEBHOOK_KEY=${BITRIX_WEBHOOK_KEY}
+    env_file:
+      - .env
+    command: python src/webhook.py
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+

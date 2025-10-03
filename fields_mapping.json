@@ -1,0 +1,210 @@
+{
+  "deal_fields": {
+    "UF_CRM_1740931312": {
+      "ui_name": "Polecenie pracy",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1925",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "1927",
+          "VALUE": "Nie"
+        }
+      ]
+    },
+    "UF_CRM_1743329864": {
+      "ui_name": "Priorytet SPA",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1951",
+          "VALUE": "Priorytet 1"
+        },
+        {
+          "ID": "1953",
+          "VALUE": "Priorytet 2"
+        },
+        {
+          "ID": "1955",
+          "VALUE": "Priorytet 3"
+        },
+        {
+          "ID": "1957",
+          "VALUE": "Priorytet 4"
+        }
+      ]
+    },
+    "UF_CRM_1748981014": {
+      "ui_name": "Komplet dokumentów",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1995",
+          "VALUE": "Tak"
+        }
+      ]
+    },
+    "UF_CRM_1748981211": {
+      "ui_name": "Wiek-data",
+      "type": "date",
+      "items": null
+    },
+    "UF_CRM_1748981275": {
+      "ui_name": "Powrót",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1999",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "2001",
+          "VALUE": "Nie"
+        }
+      ]
+    },
+    "UF_CRM_1748981302": {
+      "ui_name": "Doświadczenie",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "2003",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "2005",
+          "VALUE": "Nie"
+        }
+      ]
+    },
+    "UF_CRM_1748981451": {
+      "ui_name": "Koordynator",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "2007",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "2009",
+          "VALUE": "Nie"
+        }
+      ]
+    },
+    "UF_CRM_1740931105": {
+      "ui_name": "Płeć",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1907",
+          "VALUE": "K"
+        },
+        {
+          "ID": "1909",
+          "VALUE": "M"
+        },
+        {
+          "ID": "1911",
+          "VALUE": "PARA"
+        }
+      ]
+    },
+    "UF_CRM_1740931132": {
+      "ui_name": "Sanepid",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1913",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "1915",
+          "VALUE": "Nie"
+        }
+      ]
+    },
+    "UF_CRM_1740931164": {
+      "ui_name": "Mieszkanie",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1917",
+          "VALUE": "Własne"
+        },
+        {
+          "ID": "1919",
+          "VALUE": "Nasze"
+        }
+      ]
+    },
+    "UF_CRM_1740931210": {
+      "ui_name": "Pośrednik",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1921",
+          "VALUE": "Tak"
+        },
+        {
+          "ID": "1923",
+          "VALUE": "Nie"
+        }
+      ]
+    },
+    "UF_CRM_1740931256": {
+      "ui_name": "Data przyjazdu",
+      "type": "date",
+      "items": null
+    },
+    "UF_CRM_1740931330": {
+      "ui_name": "ID Zamówienie SPA",
+      "type": "string",
+      "items": null
+    },
+    "UF_CRM_1741856527": {
+      "ui_name": "Czas dodania - sortowanie",
+      "type": "datetime",
+      "items": null
+    },
+    "UF_CRM_1741867083": {
+      "ui_name": "Zdjęcie / skan dokumentów 1 (paszport - 1 strona)",
+      "type": "file",
+      "items": null
+    },
+    "UF_CRM_1741867102": {
+      "ui_name": "Zdjęcie / skan dokumentów 2 (paszport - wszystkie strony  + PESEL)",
+      "type": "file",
+      "items": null
+    },
+    "UF_CRM_1741867290": {
+      "ui_name": "Zatwierdzenie dokumentów",
+      "type": "enumeration",
+      "items": [
+        {
+          "ID": "1945",
+          "VALUE": "Zatwierdzone"
+        },
+        {
+          "ID": "1947",
+          "VALUE": "Odrzucone"
+        },
+        {
+          "ID": "1949",
+          "VALUE": "Do poprawy"
+        }
+      ]
+    },
+    "UF_CRM_1741871940": {
+      "ui_name": "Komentarz do dokumentów",
+      "type": "string",
+      "items": null
+    },
+    "UF_CRM_1741872862": {
+      "ui_name": "Zaplanowany przyjazd",
+      "type": "boolean",
+      "items": null
+    }
+  }
+}
